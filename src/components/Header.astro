@@ -1,0 +1,39 @@
+---
+---
+
+<header class="fixed w-full top-0 left-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="container mx-auto py-4 px-4 flex justify-between items-center">
+    <a href="#hero" class="logo">
+      <h1 class="text-2xl font-bold text-primary font-serif m-0">Iwan Bakery</h1>
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-8">
+      <a href="#hero" class="text-primary hover:text-primary-dark font-medium transition-colors">Utama</a>
+      <a href="#about" class="text-primary hover:text-primary-dark font-medium transition-colors">Tentang Kami</a>
+      <a href="#products" class="text-primary hover:text-primary-dark font-medium transition-colors">Menu</a>
+      <a href="#gallery" class="text-primary hover:text-primary-dark font-medium transition-colors">Galeri</a>
+      <a href="#testimonials" class="text-primary hover:text-primary-dark font-medium transition-colors">Testimoni</a>
+      <a href="#order" class="text-primary hover:text-primary-dark font-medium transition-colors">Tempahan</a>
+    </nav>
+    
+    <!-- Mobile Menu Toggle -->
+    <button id="menu-toggle" class="md:hidden text-primary p-2" aria-label="Toggle Menu" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="md:hidden bg-cream shadow-md absolute w-full">
+    <div class="container mx-auto py-4 px-4 flex flex-col space-y-4">
+      <a href="#hero" class="text-primary hover:text-primary-dark font-medium transition-colors">Utama</a>
+      <a href="#about" class="text-primary hover:text-primary-dark font-medium transition-colors">Tentang Kami</a>
+      <a href="#products" class="text-primary hover:text-primary-dark font-medium transition-colors">Menu</a>
+      <a href="#gallery" class="text-primary hover:text-primary-dark font-medium transition-colors">Galeri</a>
+      <a href="#testimonials" class="text-primary hover:text-primary-dark font-medium transition-colors">Testimoni</a>
+      <a href="#order" class="text-primary hover:text-primary-dark font-medium transition-colors">Tempahan</a>
+    </div>
+  </div>
+</header>

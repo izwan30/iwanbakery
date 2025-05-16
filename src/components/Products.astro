@@ -1,0 +1,128 @@
+---
+const products = [
+  {
+    category: "Kek Hari Jadi",
+    items: [
+      { 
+        name: "Kek Coklat Lembut", 
+        description: "Diperbuat dari coklat Belgium premium, lembut dan berair", 
+        image: "https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      },
+      { 
+        name: "Kek Vanilla Buttercream", 
+        description: "Kek vanilla dengan lapisan buttercream yang ringan dan sedap", 
+        image: "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      },
+      { 
+        name: "Kek Red Velvet", 
+        description: "Kek merah dengan krim keju yang lembut", 
+        image: "https://images.pexels.com/photos/6601119/pexels-photo-6601119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      }
+    ]
+  },
+  {
+    category: "Roti Sarapan",
+    items: [
+      { 
+        name: "Roti Putih", 
+        description: "Roti putih lembut yang sesuai untuk sarapan atau sandwich", 
+        image: "https://images.pexels.com/photos/1755785/pexels-photo-1755785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      },
+      { 
+        name: "Roti Gandum", 
+        description: "Roti sihat dibuat dengan tepung gandum", 
+        image: "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      },
+      { 
+        name: "Croissant", 
+        description: "Pastri lapisan yang rangup dan mentega", 
+        image: "https://images.pexels.com/photos/3892469/pexels-photo-3892469.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      }
+    ]
+  },
+  {
+    category: "Kuih Tradisional",
+    items: [
+      { 
+        name: "Kuih Lapis", 
+        description: "Kuih berlapis warna-warni yang manis dan lembut", 
+        image: "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      },
+      { 
+        name: "Ondeh-Ondeh", 
+        description: "Kuih pandan berinti gula melaka dan kelapa", 
+        image: "https://images.pexels.com/photos/3338499/pexels-photo-3338499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      },
+      { 
+        name: "Kuih Talam", 
+        description: "Kuih dua lapis dengan lapisan bawah pandan dan lapisan atas santan", 
+        image: "https://images.pexels.com/photos/2067560/pexels-photo-2067560.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      }
+    ]
+  },
+  {
+    category: "Pasta",
+    items: [
+      { 
+        name: "Lasagna", 
+        description: "Lapisan pasta, daging dan keju yang dipanggang", 
+        image: "https://images.pexels.com/photos/5949896/pexels-photo-5949896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      },
+      { 
+        name: "Spaghetti Bolognese", 
+        description: "Spaghetti dengan sos daging yang sedap", 
+        image: "https://images.pexels.com/photos/6287525/pexels-photo-6287525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      },
+      { 
+        name: "Mac and Cheese", 
+        description: "Makaroni dengan sos keju yang creamy", 
+        image: "https://images.pexels.com/photos/1527603/pexels-photo-1527603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+      }
+    ]
+  }
+];
+---
+
+<section id="products" class="section bg-white">
+  <div class="container mx-auto">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 font-serif">Menu Kami</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        Kami menyediakan pelbagai pilihan kek, roti dan kuih tradisional yang dibuat dengan bahan-bahan berkualiti. Semua produk kami dibuat segar tanpa pengawet.
+      </p>
+      <div class="mt-4 text-accent">
+        <p class="font-medium italic">* Pesanan perlu dibuat 2 hari sebelumnya *</p>
+      </div>
+    </div>
+    
+    <div class="space-y-12">
+      {products.map((category, index) => (
+        <div data-aos="fade-up" data-aos-delay={index * 100}>
+          <h3 class="text-2xl font-semibold text-primary mb-6 border-b-2 border-secondary pb-2 font-serif">{category.category}</h3>
+          
+          <div class="grid md:grid-cols-3 gap-6">
+            {category.items.map((item) => (
+              <div class="bg-cream rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                <div class="h-48 overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.name} 
+                    class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div class="p-4">
+                  <h4 class="text-xl font-semibold text-primary mb-2">{item.name}</h4>
+                  <p class="text-gray-700 text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+      <a href="#order" class="btn btn-primary">Pesan Sekarang</a>
+    </div>
+  </div>
+</section>
